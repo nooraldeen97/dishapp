@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        // make a onclick listener on add dish button to go to add dish page.
 
         Button addDishBtn = findViewById(R.id.addDishBtn);
         addDishBtn.setOnClickListener(new View.OnClickListener() {
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(goToAddDishPAge);
             }
         });
+
+        // make a onclick listener on  menu button to go to menu page.
 
         Button menuBtn = findViewById(R.id.menuBtn);
         menuBtn.setOnClickListener(new View.OnClickListener() {

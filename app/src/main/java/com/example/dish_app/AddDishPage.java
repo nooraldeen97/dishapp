@@ -25,6 +25,8 @@ public class AddDishPage extends AppCompatActivity {
         submitBtnId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // here iam getting the data by id from the form .
+
                 EditText dishNameInput=findViewById(R.id.dishNameInputId);
                 String dishName= dishNameInput.getText().toString();
 
@@ -35,9 +37,11 @@ public class AddDishPage extends AppCompatActivity {
                 EditText ingredientInput= findViewById(R.id.ingredientId);
                 String ingredient=ingredientInput.getText().toString();
 
+                // making a new object by pass the value from the form to this object.
 
                 Dish dish= new Dish(dishName,dishPrice,ingredient);
 
+                // saving the data in the data base by getting the database and save them by dao.
 
                 db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "Database").allowMainThreadQueries()
                         .build();

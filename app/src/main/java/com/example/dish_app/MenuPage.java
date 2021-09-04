@@ -24,6 +24,7 @@ public class MenuPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_page);
 
+        // make a onclick listener on  home button to get back to home.
         Button homeBtn= findViewById(R.id.homeBtn);
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,12 +34,14 @@ public class MenuPage extends AppCompatActivity {
             }
         });
 
-
+        // here in this group of code iam getting the data from database and render them.
         appDatabase =  Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "Database").allowMainThreadQueries()
                 .build();
 
         dishDao = appDatabase.dishDao();
         List<Dish> allDishes =dishDao.getAll();
+
+        // render the list of data in recycler view.
 
         RecyclerView allDishesRecyclerView=findViewById(R.id.RecyclerViewId);
         allDishesRecyclerView.setLayoutManager(new LinearLayoutManager(this));

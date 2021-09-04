@@ -16,6 +16,8 @@ import java.util.List;
 
 public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder>{
 
+    //  create the list that the adapter will use to bind data
+
     List<Dish> allDish=new ArrayList<Dish>();
 
     public DishAdapter(List<Dish> allDish) {
@@ -23,18 +25,20 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder
     }
 
 
-
+    // create the ViewHolder class (Wraps the data and the view)
     public static class DishViewHolder extends RecyclerView.ViewHolder{
-
+        // The model object
         public Dish dish;
-
+        // view object
         View itemView;
 
+        // setting the itemView value
 
         public DishViewHolder(@NotNull View itemView) {
+
             super(itemView);
             this.itemView=itemView;
-
+            // this group of code are responsible for adding click listener for each fragment and show them in details page.
             itemView.findViewById(R.id.fragmentId).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -52,6 +56,8 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder
     @NotNull
     @Override
     public DishViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+        // create the view
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_blank,parent,false);
         DishViewHolder dishViewHolder=new DishViewHolder(view);
 

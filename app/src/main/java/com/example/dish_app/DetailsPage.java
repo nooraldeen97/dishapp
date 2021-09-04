@@ -17,15 +17,17 @@ public class DetailsPage extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        // here in onResume function iam getting the data from the fragment and render them.
         Intent intent=getIntent();
         String dishName =intent.getExtras().getString("DishName");
         String dishPrice=intent.getExtras().getString("DishPrice");
         String ingredient=intent.getExtras().getString("DishIngredient");
 
+        // getting the textview by id .
         TextView name= findViewById(R.id.textName);
         TextView price= findViewById(R.id.textPrice);
         TextView theIngredient = findViewById(R.id.textIngredient);
-
+        // setting the values in textview that located in details view page.
         name.setText(dishName);
         price.setText(dishPrice);
         theIngredient.setText(ingredient);
